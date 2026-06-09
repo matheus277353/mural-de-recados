@@ -5,8 +5,8 @@
 // =============================================
 
 // Substitua pelos seus dados do Supabase
-const SUPABASE_URL = window.ENV_SUPABASE_URL || 'COLOQUE_SUA_URL_AQUI';
-const SUPABASE_ANON_KEY = window.ENV_SUPABASE_KEY || 'COLOQUE_SUA_CHAVE_AQUI';
+const SUPABASE_URL = window.ENV_SUPABASE_URL || 'https://xhdojzmvhjvyiemhabkf.supabase.co';
+const SUPABASE_ANON_KEY = window.ENV_SUPABASE_KEY || 'sb_publishable_64Y5fI6ESG7EWr1BoXEKFg_c2aVqhP0';
 
 const { createClient } = supabase;
 const db = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
