@@ -74,6 +74,7 @@ describe('validarCamposRecado()', () => {
 // ─── Teste 3: Formatação de data ───────────────────────────────────────────
 describe('formatarData()', () => {
   function formatarData(isoString) {
+    if (!isoString) return 'Data inválida';
     return new Date(isoString).toLocaleDateString('pt-BR', {
       day: '2-digit',
       month: 'short',
