@@ -5,7 +5,7 @@
 Um mural digital onde usuários podem publicar, visualizar e excluir recados em tempo real, com dados persistidos em um banco de dados na nuvem.
 
 ![Preview da aplicação](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
-![CI](https://github.com/SEU_USUARIO/mural-de-recados/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/matheus277353/mural-de-recados/actions/workflows/ci.yml/badge.svg)
 
 ---
 
@@ -40,7 +40,7 @@ Um mural digital onde usuários podem publicar, visualizar e excluir recados em 
 
 **1. Clone o repositório**
 ```bash
-git clone https://github.com/SEU_USUARIO/mural-de-recados.git
+git clone https://github.com/matheus277353/mural-de-recados.git
 cd mural-de-recados
 ```
 
@@ -60,7 +60,7 @@ npm install
 cp .env.example .env
 
 # Edite o .env e preencha com suas credenciais
-SUPABASE_URL=https://SEU_ID.supabase.co
+SUPABASE_URL=https://xhdojzmvhjvyiemhabkf.supabase.co
 SUPABASE_KEY=SUA_CHAVE_ANONIMA
 ```
 
@@ -107,7 +107,7 @@ Cada integrante abre um **Pull Request** da sua branch para a `main`. O PR só �
 
 ## 🌐 Links
 
-- **Repositório:** https://github.com/SEU_USUARIO/mural-de-recados
+- **Repositório:** https://github.com/matheus277353/mural-de-recados
 - **Aplicação publicada:** https://mural-de-recados.vercel.app
 
 ---
