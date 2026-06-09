@@ -95,11 +95,32 @@ async function atualizarRecado(id, novaMensagem) {
   return data;
 }
 
+/**
+ * Busca todos os recados de um autor específico
+ * @param {string} autor - Nome do autor
+ * @returns {Promise<Array>} Lista de recados filtrados
+ */
+async function buscarRecadosPorAutor(autor) {
+  const { data, error } = await db
+    .from('recados')
+    .select('*')
+    .eq('autor', autor)
+    .order('criado_em', { ascending: false });
+
+  if (error) {
+    console.error(`Erro ao buscar recados do autor ${autor}:`, error.message);
+    throw error;
+  }
+
+  return data;
+}
+
 // Exporta para uso global
 window.SupabaseDB = {
   buscarRecados,
   criarRecado,
   excluirRecado,
   atualizarRecado,
+  buscarRecadosPorAutor,
   db
 };
