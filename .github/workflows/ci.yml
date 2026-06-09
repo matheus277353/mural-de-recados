@@ -1,0 +1,52 @@
+name: CI — Mural de Recados
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  testes:
+    name: 🧪 Rodar Testes Automatizados
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: 🟢 Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Instalar dependências
+        run: npm ci
+
+      - name: 🧪 Executar testes
+        run: npm test
+
+      - name: ✅ Relatório de cobertura
+        if: always()
+        run: echo "Testes concluídos!"
+
+  lint:
+    name: 🔍 Verificar qualidade do código
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: 🟢 Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Instalar dependências
+        run: npm ci
+
+      - name: 🔍 Rodar ESLint
+        run: npm run lint --if-present

@@ -1,0 +1,22 @@
+{
+  "name": "mural-de-recados",
+  "version": "1.0.0",
+  "description": "Mural de Recados colaborativo com Supabase — Projeto Final",
+  "scripts": {
+    "test": "jest --coverage",
+    "lint": "eslint arthur/tests/*.js",
+    "start": "npx serve . -p 3000"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/arthur/tests/**/*.test.js"
+    ]
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.57.0"
+  },
+  "author": "Matheus Oliveira Da Silva, Felipe Gabriel Oliveira Da Silva, Arthur Borges Rodrigues da Silva",
+  "license": "MIT"
+}
