@@ -74,7 +74,10 @@ describe('validarCamposRecado()', () => {
 // ─── Teste 3: Formatação de data ───────────────────────────────────────────
 describe('formatarData()', () => {
   function formatarData(isoString) {
-    return new Date(isoString).toLocaleDateString('pt-BR', {
+    if (!isoString) return 'Data inválida';
+    const data = new Date(isoString);
+    if (isNaN(data.getTime())) return 'Data inválida';
+    return data.toLocaleDateString('pt-BR', {
       day: '2-digit',
       month: 'short',
       year: 'numeric'

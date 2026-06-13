@@ -31,9 +31,11 @@
   <!-- ===== HERO ===== -->
   <section class="hero">
     <h1 class="hero-titulo">Deixe seu recado!</h1>
-    <p class="hero-subtitulo">Um mural colaborativo onde todos podem compartilhar mensagens. ✨</p>
+    <p class="hero-subtitulo">Um mural colaborativo onde todos podem compartilhar mensagens. Clique em <strong>"+ Novo Recado"</strong> para começar! ✨</p>
     <div id="hero-stats" class="hero-stats">
       <span class="stat"><strong id="total-recados">--</strong> recados publicados</span>
+      <span class="stat-divider">·</span>
+      <span class="stat">atualizados em tempo real 🔴</span>
     </div>
   </section>
 
@@ -58,42 +60,64 @@
 
       <form id="form-recado" novalidate>
         <div class="form-grupo">
-          <label for="input-autor">Seu nome</label>
+          <label for="input-autor">Seu nome <span class="label-obrigatorio" aria-hidden="true">*</span></label>
           <input
             type="text"
             id="input-autor"
             name="autor"
-            placeholder="Ex: Matheus, Felipe, Arthur..."
+            placeholder="Como você quer ser identificado?"
             maxlength="50"
             required
             autocomplete="name"
           />
+          <span class="campo-erro" id="erro-autor" role="alert" aria-live="polite"></span>
         </div>
 
         <div class="form-grupo">
-          <label for="input-mensagem">Mensagem
+          <label for="input-mensagem">Mensagem <span class="label-obrigatorio" aria-hidden="true">*</span>
             <span id="contador-chars" class="contador">0/300</span>
           </label>
           <textarea
             id="input-mensagem"
             name="mensagem"
-            placeholder="Escreva seu recado aqui..."
+            placeholder="O que você quer dizer para o grupo? (máx. 300 caracteres)"
             rows="4"
             maxlength="300"
             required
           ></textarea>
+          <span class="campo-erro" id="erro-mensagem" role="alert" aria-live="polite"></span>
         </div>
 
         <div class="form-grupo">
-          <label>Cor do recado</label>
+          <label>Cor do cartão <span class="label-dica">(escolha um tema visual)</span></label>
           <div id="seletor-cores" class="seletor-cores"></div>
+          <span id="cor-selecionada-nome" class="cor-nome-exibida"></span>
         </div>
 
         <div class="form-acoes">
           <button type="button" id="btn-cancelar" class="btn-secundario">Cancelar</button>
-          <button type="submit" id="btn-enviar" class="btn-primary">Publicar Recado</button>
+          <button type="submit" id="btn-enviar" class="btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Publicar Recado
+          </button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <!-- ===== MODAL DE CONFIRMAÇÃO DE EXCLUSÃO ===== -->
+  <div id="modal-confirmar-excluir" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="confirmar-titulo">
+    <div class="modal-box modal-box-pequeno">
+      <div class="confirmar-icone">🗑️</div>
+      <h2 id="confirmar-titulo">Excluir recado?</h2>
+      <p class="confirmar-desc">Esta ação não pode ser desfeita. Tem certeza que deseja excluir este recado?</p>
+      <div class="form-acoes confirmar-acoes">
+        <button id="btn-confirmar-cancelar" class="btn-secundario">Manter recado</button>
+        <button id="btn-confirmar-excluir" class="btn-perigo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>
+          Sim, excluir
+        </button>
+      </div>
     </div>
   </div>
 
