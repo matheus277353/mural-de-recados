@@ -108,7 +108,6 @@ Cada integrante abre um **Pull Request** da sua branch para a `main`. O PR só �
 ## 🌐 Links
 
 - **Repositório:** https://github.com/matheus277353/mural-de-recados
-- **Aplicação publicada:** https://mural-de-recados.vercel.app
 
 ---
 
